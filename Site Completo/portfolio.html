@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PORTFÓLIO</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="images/LogoHeader.png" alt="Meu Logo" width="200" height="200" />
+                </a>
+            </div>
+            <nav>
+                <ul class="nav-list" id="main-menu">
+                    <li class="inicio"><a href="inicio.html">INÍCIO</a></li>
+                    <li class="quemsomos"><a href="quemsomos.html">QUEM SOMOS</a></li>
+                    <li class="portfolio"><a href="portfolio.html">PORTFÓLIO</a></li>
+                    <li class="orcamento"><a href="orcamento.html">ORÇAMENTOS</a></li>
+                </ul>
+                <button class="nav-toggle" aria-label="Abrir Menu" aria-expanded="false" aria-controls="main-menu">
+                    &#9776;
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <h1>NOSSO PORTFÓLIO </h1>
+        <div class="lista-container">
+            <ul class="lista-coluna">
+                <li>Portão</li>
+                <li>Guarda Corpo</li>
+                <li>Mezanino</li>
+            </ul>
+            <ul class="lista-coluna">
+                <li>Corrimão</li>
+                <li>Grade de proteção</li>
+                <li>Cobertura</li>
+            </ul>
+            <ul class="lista-coluna">
+                <li>Estrutura</li>
+                <li>Reforma de portão</li>
+                <li>Entre outros</li>
+            </ul>
+
+        </div>
+
+        </section>
+
+        <section class="projetos">
+            <div class="projetos-grid">
+                <div class="projetos-card">
+                    <img src="Fotos de trabalhos da serralheria/Projeto 6.jpg" alt="Aspas" class="projetos-icon">
+                    <h3>Telhado</h3>
+                </div>
+                <div class="projetos-card">
+                    <img src="Fotos de trabalhos da serralheria/Projeto 12.jpg" alt="Aspas" class="projetos-icon">
+                    <h3>Portão</h3>
+                </div>
+                <div class="projetos-card">
+                    <img src="Fotos de trabalhos da serralheria/Projeto 13.jpg" alt="Aspas" class="projetos-icon">
+                    <h3>Grade de proteção</h3>
+                </div>
+                <div class="projetos-card">
+                    <img src="Fotos de trabalhos da serralheria/Projeto 14.jpg" alt="Aspas" class="projetos-icon">
+                    <h3>Corrimão</h3>
+                </div>
+                <div class="projetos-card">
+                    <img src="Fotos de trabalhos da serralheria/Projeto 15.jpg" alt="Aspas" class="projetos-icon">
+                    <h3>Portão </h3>
+                </div>
+                <div class="projetos-card">
+                    <img src="Fotos de trabalhos da serralheria/Projeto 17.jpg" alt="Aspas" class="projetos-icon">
+                    <h3>Telhado</h3>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <section class="quote-section">
+            <h2>Procurando um projeto seguro e de qualidade?</h2>
+            <a href="orcamento.html" class="btn">SOLICITE UM ORÇAMENTO</a>
+        </section>
+
+        <section class="contact-section">
+            <div class="contact-images">
+                <a href="inicio.html">
+                    <img src="images/LogoFooter.png" alt="Logo" class="left-image">
+                </a>
+            </div>
+
+            <div class="contact-info">
+                <h2>Entre em contato</h2>
+                <p class="underline">serralheriadopedrinho@outlook.com</p>
+                <p><img src="images/LogoWhatsApp.png" alt="Ícone de Telefone"
+                        style="width: 20px; height: 20px; vertical-align: middle;"> (19) 99636-6467</p>
+                <p>
+                    <a href="https://www.instagram.com/serralheriado.pedrinho?igsh=MWZwMzZzb20xNHdvMA%3D%3D" target="_blank"
+                        style="text-decoration: none; color: inherit;">
+                        <img src="images/LogoInstagram.png" alt="Icone do instagram"
+                            style="width: 20px; height: 20px; vertical-align: middle;">
+                        @serralheriado.pedrinho
+                    </a>
+                </p>
+                <p>
+                    <a href="https://maps.app.goo.gl/GLZvEDQhUJx5bsmN8" target="_blank"
+                        style="text-decoration: none; color: inherit;">
+                        <img src="images/LogoLocalizacao.png" alt="Icone de Localizacao"
+                            style="width: 20px; height: 20px; vertical-align: middle;">
+                        Avenida 1 JG, N° 414 - Jardim Guanabara 2 <br>Rio Claro - SP
+                    </a>
+                </p>
+            </div>
+
+        </section>
+
+        <p class="copyright">&copy; 2024 - Todos os direitos reservados</p>
+    </footer>
+
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const toggleButton = document.querySelector(".nav-toggle");
+            const navList = document.querySelector(".nav-list");
+
+            toggleButton.addEventListener("click", function () {
+                const isExpanded = toggleButton.getAttribute("aria-expanded") === "true";
+
+                navList.classList.toggle("active");
+
+                toggleButton.setAttribute("aria-expanded", !isExpanded);
+            });
+        });
+    </script>
+</body>
+
+</html>

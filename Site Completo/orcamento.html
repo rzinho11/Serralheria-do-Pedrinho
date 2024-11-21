@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ORÇAMENTO</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="images/LogoHeader.png" alt="Meu Logo" width="200" height="200" />
+                </a>
+            </div>
+            <nav>
+                <ul class="nav-list" id="main-menu">
+                    <li class="inicio"><a href="inicio.html">INÍCIO</a></li>
+                    <li class="quemsomos"><a href="quemsomos.html">QUEM SOMOS</a></li>
+                    <li class="portfolio"><a href="portfolio.html">PORTFÓLIO</a></li>
+                    <li class="orcamento"><a href="orcamento.html">ORÇAMENTOS</a></li>
+                </ul>
+                <button class="nav-toggle" aria-label="Abrir Menu" aria-expanded="false" aria-controls="main-menu">
+                    &#9776;
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="formulario-container">
+            <h2>ORÇAMENTO</h2>
+            <p>Solicite aqui o seu orçamento:</p>
+            <form class="formulario" id="form-orcamento">
+                <!-- Primeira linha -->
+                <div class="form-group">
+                    <input type="text" placeholder="Nome Completo" class="nome" required>
+                    <input type="text" placeholder="CPF" class="cpf" required>
+                </div>
+
+                <!-- Segunda linha -->
+                <div class="form-group">
+                    <input type="text" placeholder="Logradouro" class="logradouro" required>
+                    <input type="text" placeholder="Cidade" class="cidade" required>
+                    <input type="text" placeholder="UF" class="uf" maxlength="2" required>
+                    <input type="text" placeholder="CEP" class="cep" required>
+                </div>
+
+                <!-- Terceira linha -->
+                <div class="form-group">
+                    <input type="text" placeholder="Bairro" class="bairro" required>
+                    <input type="text" placeholder="Nº" class="numero" required>
+                    <input type="text" placeholder="Complemento" class="complemento">
+                </div>
+
+                <!-- Quarta linha -->
+                <div class="form-group">
+                    <input type="email" placeholder="Email" class="email" required>
+                    <input type="tel" placeholder="Telefone" class="telefone" required>
+                    <input type="tel" placeholder="WhatsApp" class="whatsapp" required>
+                </div>
+
+                <!-- Quinta linha -->
+                <textarea placeholder="Descrição do pedido (com medidas e modelo)" required></textarea>
+
+                <!-- Botão -->
+                <button type="button" onclick="mostrarModal()">Solicitar orçamento</button>
+            </form>
+        </section>
+    </main>
+
+    <!-- Modal de aviso -->
+    <div id="modal" class="modal hidden">
+        <div class="modal-content">
+            <h3>AVISO</h3>
+            <p>Seu orçamento foi enviado com sucesso. <br>Em breve, entraremos em contato para dar seguimento ao processo!
+            </p>
+            <button onclick="fecharModal()">Voltar à Página Inicial</button>
+        </div>
+    </div>
+
+
+    <footer>
+        <section class="quote-section">
+            <h2>Procurando um projeto seguro e de qualidade?</h2>
+            <a href="orcamento.html" class="btn">SOLICITE UM ORÇAMENTO</a>
+        </section>
+
+        <section class="contact-section">
+            <div class="contact-images">
+                <a href="inicio.html">
+                    <img src="images/LogoFooter.png" alt="Logo" class="left-image">
+                </a>
+            </div>
+
+            <div class="contact-info">
+                <h2>Entre em contato</h2>
+                <p class="underline">serralheriadopedrinho@outlook.com</p>
+                <p><img src="images/LogoWhatsApp.png" alt="Ícone de Telefone"
+                        style="width: 20px; height: 20px; vertical-align: middle;"> (19) 99636-6467</p>
+                <p>
+                    <a href="https://www.instagram.com/serralheriado.pedrinho?igsh=MWZwMzZzb20xNHdvMA%3D%3D" target="_blank"
+                        style="text-decoration: none; color: inherit;">
+                        <img src="images/LogoInstagram.png" alt="Icone do instagram"
+                            style="width: 20px; height: 20px; vertical-align: middle;">
+                        @serralheriado.pedrinho
+                    </a>
+                </p>
+                <p>
+                    <a href="https://maps.app.goo.gl/GLZvEDQhUJx5bsmN8" target="_blank"
+                        style="text-decoration: none; color: inherit;">
+                        <img src="images/LogoLocalizacao.png" alt="Icone de Localizacao"
+                            style="width: 20px; height: 20px; vertical-align: middle;">
+                        Avenida 1 JG, N° 414 - Jardim Guanabara 2 <br>Rio Claro - SP
+                    </a>
+                </p>
+            </div>
+
+        </section>
+
+        <p class="copyright">&copy; 2024 - Todos os direitos reservados</p>
+    </footer>
+
+
+    <script>
+
+        function mostrarModal() {
+            const modal = document.getElementById("modal");
+            modal.classList.add("active");
+            document.body.style.overflow = "hidden"; // Impede a rolagem do fundo
+        }
+
+        function fecharModal() {
+            const modal = document.getElementById("modal");
+            modal.classList.remove("active");
+            document.body.style.overflow = ""; // Restaura a rolagem
+            window.location.href = 'inicio.html';
+        }
+
+
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const toggleButton = document.querySelector(".nav-toggle");
+            const navList = document.querySelector(".nav-list");
+
+            toggleButton.addEventListener("click", function () {
+                const isExpanded = toggleButton.getAttribute("aria-expanded") === "true";
+
+                // Alterna a visibilidade do menu
+                navList.classList.toggle("active");
+
+                // Atualiza o estado do atributo ARIA
+                toggleButton.setAttribute("aria-expanded", !isExpanded);
+            });
+        });
+    </script>
+</body>
+
+</html>
